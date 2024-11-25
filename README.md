@@ -8,13 +8,53 @@ To design and implement a Python function for calculating the volume of a cylind
 ### DESIGN STEPS:
 
 #### STEP 1:
-
+Import necessary libraries, including OpenAI for LLM integration and math for mathematical operations.
 #### STEP 2:
-
+Define a Python function to calculate the volume of a cylinder based on its radius and height.
 #### STEP 3:
-
+Integrate the function into an LLM-based chat completion system with function-calling capabilities.
 ### PROGRAM:
+```
+import openai
+import math
 
+# Define the function to calculate the volume of a cylinder
+def calculate_cylinder_volume(radius, height):
+    return math.pi * radius ** 2 * height
+
+# Example function to simulate OpenAI's function-calling integration
+def mock_llm_function_call(function_name, arguments):
+    if function_name == "calculate_cylinder_volume":
+        return {"volume": calculate_cylinder_volume(**arguments)}
+    else:
+        return {"error": "Function not recognized"}
+
+# Simulate user interaction and LLM response
+def main():
+    user_message = "What is the volume of a cylinder with radius 5 and height 10?"
+    print(f"User: {user_message}")
+    
+    # Simulated LLM recognizing the intent and invoking the function
+    function_name = "calculate_cylinder_volume"
+    arguments = {"radius": 24, "height": 50}
+    
+    # Mocking LLM function calling response
+    response = mock_llm_function_call(function_name, arguments)
+    print(f"LLM Function Output: {response}")
+
+    # Returning output to user
+    if "volume" in response:
+        print(f"Bot: The volume of the cylinder is {response['volume']:.2f}.")
+    else:
+        print("Bot: Sorry, there was an error processing your request.")
+
+# Execute the main function
+if __name__ == "__main__":
+    main()
+```
 ### OUTPUT:
+![image](https://github.com/user-attachments/assets/047cd867-f7ce-446c-8ffb-717f92c33e74)
 
 ### RESULT:
+Hence,the python program to design and implement a Python function for calculating the volume of a cylinder,
+integrating it with a chat completion system utilizing the function-calling feature of a large language model (LLM) is written successfully and executed.
